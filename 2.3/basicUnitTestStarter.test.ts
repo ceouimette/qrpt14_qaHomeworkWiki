@@ -3,16 +3,32 @@ describe("Testing the calculator", () => {
       expect(calculator.add(2, 50)).toBe(52);
     });
     test("Addition works", () => {
-      expect(true).toBeTruthy();
+      expect(calculator.add(2, 30)).toBe(32);
     });
     test("Subtraction works", () => {
-      expect(true).toBeTruthy();
+      expect(calculator.subtract(30, 2)).toBe(28);
     });
     test("Multiplication works", () => {
-      expect(true).toBeTruthy();
+      expect(calculator.multiply(2, 30)).toBe(60);
     });
     test("Division works", () => {
-      expect(true).toBeTruthy();
+      expect(calculator.divide(20, 2)).toBe(10);
+    });
+
+    test("Equal works", () => {
+      const numOne = 2 
+      const numTwo = 2
+      expect(numOne == numTwo).toBeTruthy();
+    });
+    test("Greater than works", () => {
+      const numOne = 3 
+      const numTwo = 2
+      expect(numOne > numTwo).toBeTruthy();
+    }); 
+    test("Less than works", () => {
+      const numOne = 2 
+      const numTwo = 3
+      expect(numOne < numTwo).toBeTruthy();
     });
     describe("Stretch Goals", () => {
       test("(2+2)/4 == 1", () => {
@@ -22,7 +38,7 @@ describe("Testing the calculator", () => {
         expect(true).toBeTruthy();
       });
     });
-  });
+});
   
   const calculator = {
     /** Takes two numbers and adds them together.
@@ -45,4 +61,5 @@ describe("Testing the calculator", () => {
      * calculator.divide(2, 3) == 0.5
      */
     divide: (a: number, b: number): number => a / b,
+    
   };
