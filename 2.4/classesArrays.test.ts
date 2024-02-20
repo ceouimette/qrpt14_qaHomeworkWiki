@@ -25,12 +25,12 @@ let employees: Array<Employees> = [
   //Create an array of four employees using your class. 
 ]
 
-const addEmployee: By = By.name("addEmployee")
-const newEmployee: By = By.xpath(`//li[text() = "New Employee"]`)
-const nameInput: By = By.name("nameEntry")
-const phoneInput: By = By.name("phoneEntry")
-const titleInput: By = By.name(`titleEntry`) 
-const saveBtn: By = By.id("saveBtn")  
+const addEmployee: By = By.name("addEmployee");
+const newEmployee: By = By.xpath(`//li[text() = "New Employee"]`);
+const nameInput: By = By.name("nameEntry");
+const phoneInput: By = By.name("phoneEntry"); //xpath(`(//input[@class="materialInput"])[2]`);
+const titleInput: By = By.name(`titleEntry`);
+const saveBtn: By = By.id("saveBtn");
 
 let myFunc = async (employees) => {
     await driver.findElement(addEmployee).click(); 
@@ -51,7 +51,7 @@ describe("should add employees to employee manager", () => {
         for(let i = 0; i < employees.length; i++) {
             await myFunc(employees[i]); 
         }; 
-        await driver.sleep(3000); 
+        await driver.sleep(10000); 
         await driver.quit(); 
     });
 }); 
